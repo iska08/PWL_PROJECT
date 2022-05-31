@@ -15,10 +15,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admin = $admin = DB::table('admin')->get();
-        $posts = Admin::orderBy('id', 'desc')->paginate(6);
-        return view('admin.index', compact('admin'));
-        with('i', (request()->input('page', 1) - 1) * 5);
+        $admin = DB::table('admin')->paginate(3);
+        return view('admin.index', ['admin' => $admin]);
     }
 
     /**
@@ -40,9 +38,11 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required',
-            'name' => 'required',
+            'nama' => 'required',
+            'jenisKelamin' => 'required',
+            'jabatan' => 'required',
             'email' => 'required',
+            'password' => 'required',
         ]);
 
         Admin::create($request->all());
@@ -58,8 +58,8 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        $Admin = DB::table('admin')->where('id', $id)->first();
-        return view('admin.detail', compact('Admin'));
+        $admin = DB::table('admin')->where('id', $id)->first();
+        return view('admin.detail', compact('admin'));
 
     }
 
@@ -71,8 +71,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        $Admin = DB::table('admin')->where('id', $id)->first();
-        return view('admin.edit', compact('Admin'));
+        $admin = DB::table('admin')->where('id', $id)->first();
+        return view('admin.edit', compact('admin'));
     }
 
     /**
@@ -85,9 +85,11 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id' => 'required',
-            'name' => 'required',
+            'nama' => 'required',
+            'jenisKelamin' => 'required',
+            'jabatan' => 'required',
             'email' => 'required',
+            'password' => 'required',
         ]);
 
         Admin::find($id)->update($request->all());

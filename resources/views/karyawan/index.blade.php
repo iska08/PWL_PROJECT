@@ -58,7 +58,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
               <li class="nav-item">
-                <a href="admin" class="nav-link active">
+                <a href="admin" class="nav-link">
                   <p>
                     DATA ADMIN
                     <span class="right badge badge-danger"></span>
@@ -66,7 +66,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="karyawan" class="nav-link">
+                <a href="karyawan" class="nav-link active">
                   <p>
                     DATA KARYAWAN
                     <span class="right badge badge-danger"></span>
@@ -122,7 +122,7 @@
           <div class="row">
             <div class="col-lg-12 margin-tb">
               <div class="float-right my-2">
-                <a class="btn btn-success" href="{{ route('admin.create') }}"> Input Admin</a>
+                <a class="btn btn-success" href="{{ route('karyawan.create') }}"> Input Karyawan</a>
               </div>
             </div>
           </div>
@@ -139,16 +139,16 @@
               <th><center>Email</center></th>
               <th width="280px"><center>Action</center></th>
             </tr>
-            @foreach ($admin as $adm)
+            @foreach ($karyawan as $kry)
             <tr>
-              <td>{{ $adm ->nama }}</td>
-              <td>{{ $adm ->jenisKelamin }}</td>
-              <td>{{ $adm ->jabatan }}</td>
-              <td>{{ $adm ->email }}</td>
+              <td>{{ $kry ->nama }}</td>
+              <td>{{ $kry ->jenisKelamin }}</td>
+              <td>{{ $kry ->jabatan }}</td>
+              <td>{{ $kry ->email }}</td>
               <td>
-                <form action="{{ route('admin.destroy',['admin'=>$adm->id]) }}" method="POST">
-                  <a class="btn btn-info" href="{{ route('admin.show',$adm->id) }}">Show</a>
-                  <a class="btn btn-primary" href="{{ route('admin.edit',$adm->id) }}">Edit</a>
+                <form action="{{ route('karyawan.destroy',['karyawan'=>$adm->id]) }}" method="POST">
+                  <a class="btn btn-info" href="{{ route('karyawan.show',$adm->id) }}">Show</a>
+                  <a class="btn btn-primary" href="{{ route('karyawan.edit',$adm->id) }}">Edit</a>
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-danger">Delete</button>
@@ -157,7 +157,6 @@
             </tr>
             @endforeach
           </table>
-          {{ $admin->links() }}
         </section>
         <!-- /.content -->
       </div>

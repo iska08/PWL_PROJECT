@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KaryawanController;
 use Illuminate\Http\Request;
 
 /*
@@ -21,6 +22,7 @@ Route::get('/', function () {
 
 Route::group(['middleware'=>'auth'],function(){
     Route::resource('admin', AdminController::class);
+    Route::resource('karyawan', KaryawanController::class);
 });
 
 Auth::routes();

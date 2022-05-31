@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\Admin as Authenticatable;
+use Illuminate\Foundation\Auth\Karyawan as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model
+class Karyawan extends Model
 {
-    protected $table='admin';
+    protected $table='karyawan';
     protected $primaryKey = 'id';
     /**
      * The attributes that are mass assignable.
