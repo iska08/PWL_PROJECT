@@ -16,9 +16,14 @@ use Illuminate\Http\Request;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+Route::get('/', function(){
+	return view('auth.login');
+})->middleware(['guest']);
 
 Route::group(['middleware'=>'auth'],function(){
     Route::resource('admin', AdminController::class);
