@@ -43,7 +43,6 @@
                             <div class="divider">
                                 <div class="divider-text"><a href="/">E-Laundry</a></div>
                             </div>
-                            <p style="font-size:10px">Jika ingin mendaftar silahkan hubungi nomor ini : 0822-4888-5062</p>
                         </div>
                     </div>
                 </div>

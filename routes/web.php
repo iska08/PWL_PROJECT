@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', 'FrontController@index');
-
-// Frontend
-Route::get('pencarian-laundry','FrontController@search');
+Route::get('/', function(){
+	return view('auth.login');
+})->middleware(['guest']);
 
 Auth::routes([
     'register' => false,
