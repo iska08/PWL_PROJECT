@@ -1,78 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AdminLTE 3 | Log in (v2)</title>
-        <!-- Google Font: Source Sans Pro -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-        <!-- icheck bootstrap -->
-        <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-    </head>
-    <body class="login-page" style="min-height: 466px;">
-        <div class="login-box">
-            <div class="card card-outline card-primary">
-                <div class="card-header text-center">
-                    <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+@extends('layouts.auth')
+@section('title','Masuk')
+@section('content')
+<section class="row flexbox-container">
+    <div class="col-xl-8 col-11 d-flex justify-content-center">
+        <div class="card bg-authentication rounded-0 mb-0">
+            <div class="row m-0">
+                <div class="col-lg-6 d-lg-block d-none text-center align-self-center px-1 py-0">
+                    <img src="{{asset('backend/images/pages/login.png')}}" alt="branding logo">
                 </div>
-                <!-- /.login-logo -->
-                <div class="login-box-body">
-                    <div class="card-body">
-                        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                            {{ csrf_field() }}
-                            <div class="form-group has-feedback">
-                                <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Username">
-                                @if ($errors->has('email'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                                @endif
-                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <div class="col-lg-6 col-12 p-0">
+                    <div class="card rounded-0 mb-0 px-2">
+                        <div class="card-header pb-1">
+                            <div class="card-title">
+                                <h4 class="mb-0">Masuk</h4>
                             </div>
-                            <div class="form-group has-feedback">
-                                <input type="password" class="form-control" name="password" placeholder="Password">
-                                @if ($errors->has('password'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                                @endif
-                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                        <p class="px-2">Selamat Datang, Masuk Menggunakan Akun Kamu.</p>
+                        <div class="card-content">
+                            <div class="card-body pt-1">
+                                <form action="{{route('login')}}" method="POST">
+                                    @csrf
+                                    <fieldset class="form-label-group form-group position-relative has-icon-left">
+                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="E-Mail" value="{{ old('email') }}" required>
+                                        <div class="form-control-position">
+                                            <i class="feather icon-user"></i>
+                                        </div>
+                                        <label for="email">E-Mail</label>
+                                    </fieldset>
+
+                                    <fieldset class="form-label-group position-relative has-icon-left">
+                                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="user-password" placeholder="Password" required>
+                                        <div class="form-control-position">
+                                            <i class="feather icon-lock"></i>
+                                        </div>
+                                        <label for="user-password">Password</label>
+                                    </fieldset>
+                                    <button type="submit" class="btn btn-primary float-right btn-inline btn-block">Login</button>
+                                </form>
                             </div>
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="icheck-primary">
-                                        <input type="checkbox" id="remember">
-                                        <label for="remember">Remember Me</label>
-                                    </div>
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-4">
-                                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                                </div>
-                                <!-- /.col -->
+                        </div>
+                        <div class="login-footer">
+                            <div class="divider">
+                                <div class="divider-text"><a href="/">E-Laundry</a></div>
                             </div>
-                            <p class="mb-1">
-                                <a href="forgot-password.html">I forgot my password</a>
-                            </p>
-                            <p class="mb-0">
-                                <a href="register.html" class="text-center">Register a new membership</a>
-                            </p>
-                        </form>
+                            <p style="font-size:10px">Jika ingin mendaftar silahkan hubungi nomor ini : 0822-4888-5062</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- /.login-box-body -->
         </div>
-        <!-- /.login-box -->
-        <!-- jQuery -->
-        <script src="../../plugins/jquery/jquery.min.js"></script>
-        <!-- Bootstrap 4 -->
-        <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="../../dist/js/adminlte.min.js"></script>
-    </body>
-</html>
+    </div>
+</section>
+@endsection
