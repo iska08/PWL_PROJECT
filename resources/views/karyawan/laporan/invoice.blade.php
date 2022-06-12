@@ -12,8 +12,13 @@
                     <address>
                         <h3> &nbsp;<b class="text-danger">{{$data->nama_cabang}}</b></h3>
                         <p class="text-muted m-l-5"> Diterima Oleh <span style="margin-left:20px"> </span>: {{$data->name}}
+<<<<<<< HEAD
                             <br/> Alamat <span style="margin-left:70px"> </span>: {{$data->alamat_cabang}}
                             <br/> No. Telp <span style="margin-left:68px"> </span>: {{$data->no_telpc}}
+=======
+                            <br/> Alamat <span style="margin-left:70px"> </span>: {{$data->alamat_cabang}},
+                            <br/> No. Telp <span style="margin-left:68px"> </span>: {{$data->no_telpc}},
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
                             </p>
                     </address>
                 </div>
@@ -23,6 +28,7 @@
                         <p class="text-muted m-l-30">
                             {{$data->nama}}
                             <br/> {{$data->alamat}}
+<<<<<<< HEAD
                             <br/> {{$data->no_telp}}
                         </p>
                         <p class="m-t-30">
@@ -33,6 +39,11 @@
                         <p>
                             <b>Tanggal Diambil :</b>
                             <i class="fa fa-calendar"></i>
+=======
+                            <br/> {{$data->no_telp}}</p>
+                        <p class="m-t-30"><b>Tanggal Masuk :</b> <i class="fa fa-calendar"></i> {{carbon\carbon::parse($data->tgl_transaksi)->format('d-m-Y')}}</p>
+                        <p><b>Tanggal Diambil :</b> <i class="fa fa-calendar"></i>
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
                             @if ($data->tgl_ambil == "")
                                 Belum Diambil
                             @else
@@ -47,7 +58,11 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
+<<<<<<< HEAD
                                 <th class="text-center">No</th>
+=======
+                                <th class="text-center">#</th>
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
                                 <th>Jenis Pakaian</th>
                                 <th class="text-right">Berat</th>
                                 <th class="text-right">Harga</th>

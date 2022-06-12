@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Karyawan;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\{transaksi,customer,harga};
+=======
+use App\Models\{Transaksi,Customer,Harga};
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
 use Auth;
 use PDF;
 use Mail;
@@ -20,7 +24,11 @@ class PelayananController extends Controller
     // Halaman list order masuk
     public function index()
     {
+<<<<<<< HEAD
       $order = transaksi::with('price')->where('user_id',Auth::user()->id)
+=======
+      $order = Transaksi::with('price')->where('user_id',Auth::user()->id)
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
       ->orderBy('id','DESC')->get();
       return view('karyawan.transaksi.order', compact('order'));
     }
@@ -104,14 +112,22 @@ class PelayananController extends Controller
     // Daftar Costomer
     public function listcs()
     {
+<<<<<<< HEAD
       $customer = customer::orderBy('id','DESC')->where('user_id',Auth::user()->id)->get();
+=======
+      $customer = Customer::orderBy('id','DESC')->where('user_id',Auth::user()->id)->get();
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
       return view('karyawan.transaksi.customer', compact('customer'));
     }
 
     // Tambah Order
     public function addorders()
     {
+<<<<<<< HEAD
       $customer = customer::where('user_id',Auth::user()->id)->get();
+=======
+      $customer = Customer::where('user_id',Auth::user()->id)->get();
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
 
       $y = date('Y');
       $number = mt_rand(1000, 9999);
@@ -119,15 +135,24 @@ class PelayananController extends Controller
       $newID = $number. Auth::user()->id .''.$y;
       $tgl = date('d-m-Y');
 
+<<<<<<< HEAD
       $cek_harga = harga::where('user_id',Auth::user()->id)->where('status',1)->first();
       $cek_customer = customer::select('id','user_id')->where('user_id',Auth::id())->count();
+=======
+      $cek_harga = Harga::where('user_id',Auth::user()->id)->where('status',1)->first();
+      $cek_customer = Customer::select('id','user_id')->where('user_id',Auth::id())->count();
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
       return view('karyawan.transaksi.addorder', compact('customer','newID','cek_harga','cek_customer'));
     }
 
     // Filter List Harga
     public function listharga(Request $request)
     {
+<<<<<<< HEAD
        $list_harga = harga::select('id','harga')
+=======
+       $list_harga = Harga::select('id','harga')
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
         ->where('user_id',Auth::user()->id)
         ->where('id',$request->id)
         ->get();
@@ -149,7 +174,11 @@ class PelayananController extends Controller
     // Filter List Jumlah Hari
     public function listhari(Request $request)
     {
+<<<<<<< HEAD
       $list_jenis = harga::select('id','hari')
+=======
+      $list_jenis = Harga::select('id','hari')
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
         ->where('user_id',Auth::user()->id)
         ->where('id',$request->id)
         ->get();
@@ -171,7 +200,11 @@ class PelayananController extends Controller
     // Proses Ubah Status Order
     public function ubahstatusorder(Request $request)
     {
+<<<<<<< HEAD
       $statusorder = transaksi::find($request->id);
+=======
+      $statusorder = Transaksi::find($request->id);
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
       $statusorder->update([
           'status_order' => $request->status_order,
       ]);
@@ -208,7 +241,11 @@ class PelayananController extends Controller
     // Proses Ubah Status Pembayaran
     public function ubahstatusbayar(Request $request)
     {
+<<<<<<< HEAD
       $statusbayar = transaksi::find($request->id);
+=======
+      $statusbayar = Transaksi::find($request->id);
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
       $statusbayar->update([
           'status_payment' => $request->status_payment,
       ]);
@@ -219,7 +256,11 @@ class PelayananController extends Controller
     // Proses Ubah Status Diambil
     public function ubahstatusambil(Request $request)
     {
+<<<<<<< HEAD
       $statusbayar = transaksi::find($request->id);
+=======
+      $statusbayar = Transaksi::find($request->id);
+>>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
       $statusbayar->update([
           'tgl_ambil' => Carbon::today(),
           'status_order' => 'Delivery'
