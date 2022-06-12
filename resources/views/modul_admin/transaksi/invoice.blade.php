@@ -28,16 +28,16 @@
                         <p class="m-t-30">
                           <b>Tanggal Masuk :</b>
                           <i class="fa fa-calendar"></i>
-                          {{carbon\carbon::parse($dataInvoice->customers->tgl_transaksi)->format('d F Y')}}
+                          {{carbon\carbon::parse($dataInvoice->customers->tgl_transaksi)->format('d-m-Y')}}
                         </p>
                         <p>
                           <b>Tanggal Diambil :</b>
                           <i class="fa fa-calendar"></i>
-                            @if ($dataInvoice->customers->tgl_ambil == "")
-                                Belum Diambil
-                            @else
-                            {{carbon\carbon::parse($dataInvoice->tgl_ambil)->format('d F Y')}}
-                            @endif
+                          @if ($dataInvoice->customers->tgl_ambil == "")
+                            Belum Diambil
+                          @else
+                          {{\carbon\carbon::parse($dataInvoice->customers->tgl_ambil)->format('d-m-Y')}}
+                          @endif
                         </p>
                     </address>
                 </div>
@@ -47,7 +47,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th class="text-center">#</th>
+                                <th class="text-center">No</th>
                                 <th>Jenis Pakaian</th>
                                 <th class="text-right">Berat</th>
                                 <th class="text-right">Harga</th>
@@ -63,7 +63,7 @@
                                 <td class="text-right">{{Rupiah::getRupiah($item->harga)}} /Kg</td>
                                 <td class="text-right">
                                     <input type="hidden" value="{{$hitung = $item->kg * $item->harga}}">
-                                    <p style="color:white">{{Rupiah::getRupiah($hitung)}}</p>
+                                    <p style="color:black">{{Rupiah::getRupiah($hitung)}}</p>
                                 </td>
                             </tr>
                         </tbody>
@@ -71,13 +71,6 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="pull-left m-t-10">
-                    <h6 class="text-right" style="font-weight:bold">Dengan Menandatangani/Menerima Nota Ini, Berarti Anda Setuju :</h6>
-                    <p>
-                        1. Isi Deskripsi <br>
-                        2. Isi Deskripsi
-                    </p>
-                </div>
                 <div class="pull-right m-t-10 text-right">
                     <p>Total : {{Rupiah::getRupiah($hitung)}}</p>
                     <p>Disc @if ($item->disc == "")
@@ -93,7 +86,6 @@
                 <hr>
                 <div class="text-right">
                   <a href="{{route('transaksi.index')}}" class="btn btn-outline btn-info" style="color:white">Kembali</a>
-                  {{-- <button id="print" class="btn btn-primary btn-outline" type="button"> <span style="color:white"><i class="fa fa-print"></i> Print</span> </button> --}}
                 </div>
             </div>
         </div>
