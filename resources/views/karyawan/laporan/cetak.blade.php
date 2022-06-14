@@ -79,7 +79,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <th class="text-center">#</th>
+                    <th class="text-center">No</th>
                     <th>Jenis Pakaian</th>
                     <th class="text-right">Berat</th>
                     <th class="text-right">Harga</th>

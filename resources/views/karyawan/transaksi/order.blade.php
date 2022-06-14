@@ -22,11 +22,7 @@
             <table id="myTable" class="table display table-bordered table-striped">
                 <thead>
                     <tr>
-<<<<<<< HEAD
                         <th>No</th>
-=======
-                        <th>#</th>
->>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
                         <th>No Resi</th>
                         <th>TGL Transaksi</th>
                         <th>Customer</th>

@@ -20,11 +20,7 @@
             <table id="myTable" class="table table-bordered table-striped">
                 <thead>
                     <tr align="center" style="color:black; font-weight:bold">
-<<<<<<< HEAD
                         <th>No</th>
-=======
-                        <th>#</th>
->>>>>>> 0b01095557514509b8f2d95287fddc904f1f3236
                         <th>Nama</th>
                         <th>Email</th>
                         <th>Alamat</th>
