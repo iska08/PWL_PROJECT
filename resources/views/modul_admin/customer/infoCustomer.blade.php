@@ -38,7 +38,7 @@
 
                     <dl class="row">
                         <dt class="col-sm-2">Laundry Pertama</dt>
-                        <dd class="col-sm-10">: {{$customer->created_at->format('d F Y')}}</dd>
+                        <dd class="col-sm-10">: {{$customer->created_at->format('d M Y')}}</dd>
                     </dl>
 
                 </div>
@@ -58,7 +58,7 @@
                     <table id="myTable" class="table display table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>Invoice</th>
                                 <th>Tgl Transaksi</th>
                                 <th>Tgl Diambil</th>

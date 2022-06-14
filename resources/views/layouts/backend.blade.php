@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
-<!-- BEGIN: Head-->
-
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -14,14 +12,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('backend/images/ico/favicon.ico')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
-    <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('backend/vendors/css/vendors.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('backend/vendors/css/extensions/tether.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('backend/vendors/css/extensions/shepherd-theme-default.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('backend/vendors/css/tables/datatable/datatables.min.css')}}">
-    <!-- END: Vendor CSS-->
 
-    <!-- BEGIN: Theme CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/bootstrap.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/bootstrap-extended.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/colors.css')}}">
@@ -29,24 +24,11 @@
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/themes/dark-layout.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/themes/semi-dark-layout.css')}}">
 
-    <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/core/menu/menu-types/vertical-menu.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/core/colors/palette-gradient.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/pages/dashboard-analytics.css')}}">
-
-    <!-- END: Page CSS-->
-
-    <!-- BEGIN: Custom CSS-->
-    <!-- END: Custom CSS-->
-
-</head>
-<!-- END: Head-->
-
-<!-- BEGIN: Body-->
-
-<body class="vertical-layout vertical-menu-modern  {{Auth::user()->theme == 1 ? 'dark-layout' : ''}} content-left-sidebar chat-application navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="content-left-sidebar" data-layout="dark-layout">
-
-    <!-- BEGIN: Header-->
+  </head>
+  <body class="vertical-layout vertical-menu-modern  {{Auth::user()->theme == 1 ? 'dark-layout' : ''}} content-left-sidebar chat-application navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="content-left-sidebar" data-layout="dark-layout">
     <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu floating-nav navbar-light navbar-shadow">
         <div class="navbar-wrapper">
             <div class="navbar-container content">
@@ -64,27 +46,6 @@
                                         <h3 class="white"></h3><span class="notification-title">App Notifications</span>
                                     </div>
                                 </li>
-                                <li class="scrollable-container media-list">
-                                    {{-- @foreach ($notif as $item)
-                                        <a class="d-flex justify-content-between" id="notif" data-id="{{$item->id}}">
-                                            <div class="media d-flex align-items-start">
-                                                <div class="media-left">
-                                                    <i class="feather icon-plus-square font-medium-5 primary"></i>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h6 class="primary media-heading">Laundry Baru Masuk</h6>
-                                                    <small class="notification-text"> {{$item->customer}} | {{$item->kg}} kg | {{Rupiah::getRupiah($item->harga_akhir)}}</small>
-                                                </div>
-                                                <small>
-                                                    <time class="media-meta">{{Carbon\carbon::parse($item->updated_at)->diffForHumans()}}</time>
-                                                </small>
-                                            </div>
-                                        </a>
-                                    @endforeach --}}
-                                </li>
-                                {{-- <li class="dropdown-menu-footer">
-                                    <a class="dropdown-item p-1 text-center" href="javascript:void(0)">Read all notifications</a>
-                                </li> --}}
                             </ul>
                         </li>
                         <li class="dropdown dropdown-user nav-item">
@@ -95,14 +56,6 @@
                             </div>
                           </a>
                           <div class="dropdown-menu dropdown-menu-right">
-                            @if (auth::user()->auth == 'Admin')
-                              <a class="dropdown-item" href="{{url('profile-admin', auth::user()->id )}}"><i class="feather icon-user"></i>Profile
-                              </a>
-                            @else
-                              <a class="dropdown-item" href="{{url('profile-karyawan', auth::user()->id )}}"><i class="feather icon-user"></i>Profile
-                              </a>
-                            @endif
-                            <div class="dropdown-divider"></div>
                             <a href="{{ route('logout') }}" class="dropdown-item"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();" data-toggle="tooltip" title="Logout">
@@ -119,10 +72,6 @@
             </div>
         </div>
     </nav>
-    <!-- END: Header-->
-
-
-    <!-- BEGIN: Main Menu-->
     <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
@@ -135,109 +84,75 @@
         </div>
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
-            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="nav-item {{ (request()->is('home')) ? 'active' : '' }}"><a href="{{url('home')}}"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a>
+          <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class="nav-item {{ (request()->is('home')) ? 'active' : '' }}"><a href="{{url('home')}}"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a>
+            </li>
+            @if (auth::user()->auth == "Admin")
+            <li class=" nav-item"><a href="#"><i class="feather icon-users"></i><span class="menu-title" data-i18n="User">Data User</span></a>
+              <ul class="menu-content">
+                <li class="nav-item {{ (request()->is('karyawan')) ? 'active' : '' }}">
+                  <a href="{{route('karyawan.index')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="View">Karyawan</span></a>
                 </li>
-
-                {{-- Menu Admin --}}
-                    @if (auth::user()->auth == "Admin")
-                        <li class=" nav-item"><a href="#"><i class="feather icon-users"></i><span class="menu-title" data-i18n="User">Data User</span></a>
-                            <ul class="menu-content">
-                              <li class="nav-item {{ (request()->is('karyawan')) ? 'active' : '' }}">
-                                <a href="{{route('karyawan.index')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="View">Karyawan</span></a>
-                              </li>
-                              <li class="nav-item {{ (request()->is('customer')) ? 'active' : '' }}">
-                                <a href="{{url('customer')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Customer</span></a>
-                              </li>
-                            </ul>
-                        </li>
-
-                        {{-- <li class=" nav-item"><a href="#"><i class="feather icon-layers"></i><span class="menu-title" data-i18n="User">Data Transaksi</span></a>
-                            <ul class="menu-content">
-                                <li class="nav-item {{ (request()->is('transaksi')) ? 'active' : '' }}">
-                                  <a href="{{url('transaksi')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Transaksi</span></a>
-                                </li>
-                                <li class="nav-item {{ (request()->is('data-harga')) ? 'active' : '' }}">
-                                  <a href="{{url('data-harga')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Harga Laundry</span></a>
-                                </li>
-                            </ul>
-                        </li> --}}
-
-                        <li class="nav-item {{ (request()->is('transaksi')) ? 'active' : '' }}">
-                          <a href="{{route('transaksi.index')}}"><i class="feather icon-shopping-cart"></i><span class="menu-item" data-i18n="List">Transaksi</span></a>
-                        </li>
-
-
-                        <li class=" nav-item"><a href="#"><i class="feather icon-credit-card"></i><span class="menu-title" data-i18n="User">Data Finance</span></a>
-                          <ul class="menu-content">
-                            <li class="nav-item {{ (request()->is('data-finance')) ? 'active' : '' }}">
-                              <a href="{{url('data-finance')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Finance</span></a>
-                            </li>
-                            <li class="nav-item {{ (request()->is('data-harga')) ? 'active' : '' }}">
-                              <a href="{{url('data-harga')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Harga Laundry</span></a>
-                            </li>
-                          </ul>
-                        </li>
-
-                        <li class=" nav-item"><a href="#"><i class="feather icon-settings"></i><span class="menu-title" data-i18n="User">Other</span></a>
-                          <ul class="menu-content">
-                            <li class="nav-item {{ (request()->is('settings')) ? 'active' : '' }}">
-                              <a href="{{url('settings')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Setting</span></a>
-                            </li>
-                          </ul>
-                        </li>
-                    {{-- End Menu Admin --}}
-
-                    {{-- Menu Karyawan --}}
-                    @elseif(auth::user()->auth == "Karyawan")
-                        <li class=" nav-item"><a href="#"><i class="feather icon-layers"></i><span class="menu-title" data-i18n="User">Data Transaksi</span></a>
-                            <ul class="menu-content">
-                                <li class="nav-item {{ (request()->is('pelayanan')) ? 'active' : '' }}">
-                                  <a href="{{route('pelayanan.index')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Order Masuk</span></a>
-                                </li>
-                                <li class="nav-item {{ (request()->is('add-order')) ? 'active' : '' }}">
-                                  <a href="{{url('add-order')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Tambah Order</span></a>
-                                </li>
-                                <li class="nav-item {{ (request()->is('list-customer')) ? 'active' : '' }}">
-                                  <a href="{{url('list-customer')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Data Customer</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a href="{{url('/laporan')}}"><i class="feather icon-file-text"></i><span class="menu-title" data-i18n="Dashboard">Laporan</span></a>
-                        </li>
-                         <li class="nav-item"><a href="{{url('/')}}" target="_blank"><i class="feather icon-square"></i><span class="menu-title" data-i18n="Dashboard">Frontend</span></a>
-                        </li>
-                    @endif
-                {{--End  --}}
-            </ul>
+                <li class="nav-item {{ (request()->is('customer')) ? 'active' : '' }}">
+                  <a href="{{url('customer')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Customer</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item {{ (request()->is('transaksi')) ? 'active' : '' }}">
+              <a href="{{route('transaksi.index')}}"><i class="feather icon-shopping-cart"></i><span class="menu-item" data-i18n="List">Transaksi</span></a>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="feather icon-credit-card"></i><span class="menu-title" data-i18n="User">Data Finance</span></a>
+              <ul class="menu-content">
+                <li class="nav-item {{ (request()->is('data-finance')) ? 'active' : '' }}">
+                  <a href="{{url('data-finance')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Finance</span></a>
+                </li>
+                <li class="nav-item {{ (request()->is('data-harga')) ? 'active' : '' }}">
+                  <a href="{{url('data-harga')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Harga Laundry</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item {{ (request()->is('settings')) ? 'active' : '' }}">
+              <a href="{{url('settings')}}"><i class="feather icon-settings"></i><span class="menu-item" data-i18n="List">Setting</span></a>
+            </li>
+            @elseif(auth::user()->auth == "Karyawan")
+            <li class=" nav-item"><a href="#"><i class="feather icon-layers"></i><span class="menu-title" data-i18n="User">Data Transaksi</span></a>
+              <ul class="menu-content">
+                <li class="nav-item {{ (request()->is('pelayanan')) ? 'active' : '' }}">
+                  <a href="{{route('pelayanan.index')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Order Masuk</span></a>
+                </li>
+                <li class="nav-item {{ (request()->is('add-order')) ? 'active' : '' }}">
+                  <a href="{{url('add-order')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Tambah Order</span></a>
+                </li>
+                <li class="nav-item {{ (request()->is('list-customer')) ? 'active' : '' }}">
+                  <a href="{{url('list-customer')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Data Customer</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="{{url('/laporan')}}">
+              <i class="feather icon-file-text"></i>
+              <span class="menu-title" data-i18n="Dashboard">Laporan</span></a>
+            </li>
+            @endif
+          </ul>
         </div>
     </div>
-    <!-- END: Main Menu-->
-
-    <!-- BEGIN: Content-->
     <div class="app-content content">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper">
-            <div class="content-header row">
-            </div>
-            <div class="content-body">
-                @yield('content')
-                @include('sweetalert::alert')
-            </div>
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      <div class="content-wrapper">
+          <div class="content-header row">
+          </div>
+          <div class="content-body">
+              @yield('content')
+              @include('sweetalert::alert')
+          </div>
 
-        </div>
+      </div>
     </div>
-    <!-- END: Content-->
-
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
-
-    <!-- BEGIN: Vendor JS-->
     <script src="{{asset('backend/vendors/js/vendors.js')}}"></script>
-    <!-- BEGIN Vendor JS-->
 
-    <!-- BEGIN: Page Vendor JS-->
     <script src="{{asset('backend/vendors/js/charts/apexcharts.min.js')}}"></script>
     <script src="{{asset('backend/vendors/js/extensions/tether.min.js')}}"></script>
     <script src="{{asset('backend/vendors/js/extensions/shepherd.min.js')}}"></script>
@@ -249,19 +164,13 @@
     <script src="{{asset('backend/vendors/js/tables/datatable/buttons.print.min.js')}}"></script>
     <script src="{{asset('backend/vendors/js/tables/datatable/buttons.bootstrap.min.js')}}"></script>
     <script src="{{asset('backend/vendors/js/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
+    
     <script src="{{asset('backend/js/core/app-menu.js')}}"></script>
     <script src="{{asset('backend/js/core/app.js')}}"></script>
     <script src="{{asset('backend/js/scripts/components.js')}}"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
+    
     <script src="{{asset('backend/js/scripts/datatables/datatable.js')}}"></script>
-    <!-- END: Page JS-->
+    
     @yield('scripts')
-</body>
-<!-- END: Body-->
-
+  </body>
 </html>

@@ -25,20 +25,6 @@
                           {{$dataInvoice->customers->alamat}}<br/>
                           {{$dataInvoice->customers->no_telp == 0 ? '-' : $dataInvoice->customers->no_telp}}
                         </p>
-                        <p class="m-t-30">
-                          <b>Tanggal Masuk :</b>
-                          <i class="fa fa-calendar"></i>
-                          {{carbon\carbon::parse($dataInvoice->customers->tgl_transaksi)->format('d-m-Y')}}
-                        </p>
-                        <p>
-                          <b>Tanggal Diambil :</b>
-                          <i class="fa fa-calendar"></i>
-                          @if ($dataInvoice->customers->tgl_ambil == "")
-                            Belum Diambil
-                          @else
-                          {{\carbon\carbon::parse($dataInvoice->customers->tgl_ambil)->format('d-m-Y')}}
-                          @endif
-                        </p>
                     </address>
                 </div>
             </div>

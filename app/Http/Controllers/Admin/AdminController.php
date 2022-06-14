@@ -45,7 +45,7 @@ class AdminController extends Controller
       $addharga = new harga();
       $addharga->user_id = $request->user_id;
       $addharga->jenis = $request->jenis;
-      $addharga->kg = 1000; // satuan gram
+      $addharga->kg = 1;
       $addharga->harga = $request->harga;
       $addharga->hari = $request->hari;
       $addharga->status = 1; //aktif

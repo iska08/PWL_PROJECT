@@ -50,14 +50,14 @@
             <thead>
                 <tr>
                     <th colspan="4">Invoice <strong>{{$data->invoice}}</strong></th>
-                    <th>{{ $data->created_at->format('d-M-Y') }}</th>
+                    <th>{{ date('d-M-Y') }}</th>
                 </tr>
                 <tr>
                     <td style="padding-bottom:80px" colspan="2">
                         <h3 style="color:coral">{{$data->nama_cabang}}</h3>
                         <p class="text-muted m-l-5"> Diterima Oleh <span style="margin-left:8px"> </span>: {{$data->name}}
-                            <br/> Alamat <span style="margin-left:62px"> </span>: {{$data->alamat_cabang}},
-                            <br/> No. Telp <span style="margin-left:50px"> </span>: {{$data->no_telpc}},
+                            <br/> Alamat <span style="margin-left:62px"> </span>: {{$data->alamat_cabang}}
+                            <br/> No. Telp <span style="margin-left:50px"> </span>: {{$data->no_telpc}}
                             </p>
                     </td>
                     <td colspan="3">

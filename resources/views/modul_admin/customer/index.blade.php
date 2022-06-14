@@ -14,7 +14,7 @@
                     <table id="myTable" class="table display table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>Nama</th>
                                 <th>Alamat</th>
                                 <th>No Telpon</th>
