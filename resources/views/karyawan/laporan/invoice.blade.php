@@ -74,7 +74,7 @@
             <div class="col-md-12">
                 <div class="pull-right m-t-10 text-right">
                     <p>Total : {{Rupiah::getRupiah($hitung)}}</p>
-                    <p>Disc @if ($item->disc == "")
+                    <p>Diskon @if ($item->disc == "")
                         (0 %)
                     @else
                         ({{$item->disc}} %)

@@ -30,7 +30,7 @@
                             <td>{{$item->alamat}}</td>
                             <td>{{$item->no_telp}}</td>
                             <td>
-                               {{$item->sum('kg')}}
+                                {{$item->sum('kg')}}
                             </td>
                             <td></td>
                         </tr>
@@ -44,7 +44,6 @@
 </div>
 @endsection
 @section('scripts')
-
 <script type="text/javascript">
     $(document).ready(function() {
         $('#myTable').DataTable();

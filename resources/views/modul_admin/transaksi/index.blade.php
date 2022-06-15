@@ -24,8 +24,8 @@
                   <table id="myTable" class="table display table-bordered table-striped">
                       <thead>
                           <tr>
-                              <th>#</th>
-                              <th>TGL Transaksi</th>
+                              <th>No</th>
+                              <th>Tanggal Transaksi</th>
                               <th>Customer</th>
                               <th>Status Order</th>
                               <th>Status Pembayaran</th>

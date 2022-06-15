@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
         body{
-            font-family: 'Times New Roman', Times, serif;
+            font-family:t;
             color:#333;
             text-align:left;
             font-size:18px;
@@ -65,14 +65,7 @@
                         <p style="text-align:right">
                             {{$data->nama}}
                             <br/> {{$data->alamat}}
-                            <br/> {{$data->no_telp}}</p> <br>
-                        <p style="text-align:right"><b>Tanggal Masuk :</b> <i class="fa fa-calendar"></i> {{carbon\carbon::parse($data->tgl_transaksi)->format('d-m-y')}}</p>
-                        <p style="text-align:right"><b>Tanggal Diambil :</b> <i class="fa fa-calendar"></i> 
-                            @if ($data->tgl_ambil == "")
-                                Belum Diambil
-                            @else
-                            {{carbon\carbon::parse($data->tgl_ambil)->format('d-m-y')}}
-                            @endif
+                            <br/> {{$data->no_telp}}
                         </p>
                     </td>
                 </tr>
@@ -96,7 +89,7 @@
                 </tr>
                 @endforeach
                 <tr>
-                    <th colspan="4">Diskon @if ($item->disc == "")
+                    <th colspan="4">Disc @if ($item->disc == "")
                         0 %
                     @else
                         {{$item->disc}} %
@@ -108,6 +101,7 @@
                     <td style="color:black; font-weight:bold">{{Rupiah::getRupiah($item->harga_akhir)}}</td>
                 </tr>
             </tbody>
+            
         </table>
     </div>
 </body>

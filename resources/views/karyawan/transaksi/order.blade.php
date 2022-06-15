@@ -24,7 +24,7 @@
                     <tr>
                         <th>No</th>
                         <th>No Resi</th>
-                        <th>TGL Transaksi</th>
+                        <th>Tanggal Transaksi</th>
                         <th>Customer</th>
                         <th>Status Order</th>
                         <th>Status Payment</th>

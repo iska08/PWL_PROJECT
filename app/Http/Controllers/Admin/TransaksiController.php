@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{transaksi,user};
 use Rupiah;
+use PDF;
 
 class TransaksiController extends Controller
 {
@@ -86,6 +87,23 @@ class TransaksiController extends Controller
       ->first();
 
       return view('modul_admin.transaksi.invoice', compact('invoice','dataInvoice'));
+    }
+
+    public function cetakinvoice(Request $request)
+    {
+      $invoice = transaksi::selectRaw('transaksis.*,a.jenis')
+        ->leftJoin('hargas as a' , 'a.id' , '=' ,'transaksis.harga_id')
+        ->where('transaksis.id', $request->id)
+        ->orderBy('id','DESC')->get();
+
+      $data = transaksi::selectRaw('transaksis.*,a.nama,a.alamat,a.no_telp,a.kelamin,b.name,b.nama_cabang,b.alamat_cabang,b.no_telp as no_telpc')
+        ->leftJoin('customers as a' , 'a.id' , '=' ,'transaksis.id')
+        ->leftJoin('users as b' , 'b.id' , '=' ,'transaksis.user_id')
+        ->where('transaksis.id', $request->id)
+        ->orderBy('id','DESC')->first();
+
+      $pdf = PDF::loadView('modul_admin.transaksi.cetak', compact('invoice','data'))->setPaper('a4', 'potrait');
+      return $pdf->stream();
     }
 
     /**

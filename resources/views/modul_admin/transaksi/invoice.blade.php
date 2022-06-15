@@ -4,26 +4,31 @@
 @section('content')
 <div class="col-md-12">
     <div class="card card-body printableArea">
-        <h3><b>INVOICE</b> <span class="pull-right">{{$dataInvoice->invoice}}</span></h3>
+        <h3>
+            <b>INVOICE</b>
+            <span class="pull-right">{{$dataInvoice->invoice}}</span>
+        </h3>
         <hr>
         <div class="row">
             <div class="col-md-12">
                 <div class="pull-left">
                     <address>
-                        <h3><b class="text-danger">{{$dataInvoice->customers->users->nama_cabang}}</b></h3>
+                        <h3>
+                            <b class="text-danger">{{$dataInvoice->customers->users->nama_cabang}}</b>
+                        </h3>
                         <p class="text-muted m-l-5">
-                          Diterima Oleh <span style="margin-left:20px"> </span>: {{$dataInvoice->customers->users->name}} <br/>
-                          Alamat <span style="margin-left:68px"> </span>: {{$dataInvoice->customers->users->alamat_cabang}} <br/>
-                          No. Telp <span style="margin-left:63px"> </span>: {{$dataInvoice->customers->users->no_telp == 0 ? '-' : $dataInvoice->customers->users->no_telp}}
+                            Diterima Oleh <span style="margin-left:20px"> </span>: {{$dataInvoice->customers->users->name}} <br/>
+                            Alamat <span style="margin-left:68px"> </span>: {{$dataInvoice->customers->users->alamat_cabang}} <br/>
+                            No. Telp <span style="margin-left:63px"> </span>: {{$dataInvoice->customers->users->no_telp == 0 ? '-' : $dataInvoice->customers->users->no_telp}}
                     </address>
                 </div>
                 <div class="pull-right text-right">
                     <address>
                         <h3>Detail Order Customer :</h3>
                         <p class="text-muted m-l-30">
-                          {{$dataInvoice->customers->nama}}<br/>
-                          {{$dataInvoice->customers->alamat}}<br/>
-                          {{$dataInvoice->customers->no_telp == 0 ? '-' : $dataInvoice->customers->no_telp}}
+                            {{$dataInvoice->customers->nama}}<br/>
+                            {{$dataInvoice->customers->alamat}}<br/>
+                            {{$dataInvoice->customers->no_telp == 0 ? '-' : $dataInvoice->customers->no_telp}}
                         </p>
                     </address>
                 </div>
@@ -41,7 +46,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                          @foreach ($invoice as $key => $item)
+                            @foreach ($invoice as $key => $item)
                             <tr>
                                 <td class="text-center">{{$key+1}}</td>
                                 <td>{{$item->price->jenis}}</td>
@@ -49,7 +54,7 @@
                                 <td class="text-right">{{Rupiah::getRupiah($item->harga)}} /Kg</td>
                                 <td class="text-right">
                                     <input type="hidden" value="{{$hitung = $item->kg * $item->harga}}">
-                                    <p style="color:black">{{Rupiah::getRupiah($hitung)}}</p>
+                                    <p style="color:black/white">{{Rupiah::getRupiah($hitung)}}</p>
                                 </td>
                             </tr>
                         </tbody>
@@ -59,19 +64,24 @@
             <div class="col-md-12">
                 <div class="pull-right m-t-10 text-right">
                     <p>Total : {{Rupiah::getRupiah($hitung)}}</p>
-                    <p>Disc @if ($item->disc == "")
+                    <p>Diskon
+                        @if ($item->disc == "")
                         (0 %)
-                    @else
+                        @else
                         ({{$item->disc}} %)
-                    @endif :  <input type="hidden" value="{{$disc = ($hitung * $item->disc   ) / 100}}"> {{Rupiah::getRupiah($disc)}} </p>
+                        @endif :  <input type="hidden" value="{{$disc = ($hitung * $item->disc   ) / 100}}"> {{Rupiah::getRupiah($disc)}}
+                    </p>
                     <hr>
-                    <h3><b>Total Bayar :</b> {{Rupiah::getRupiah($hitung - $disc)}}</h3>
+                    <h3>
+                        <b>Total Bayar :</b> {{Rupiah::getRupiah($hitung - $disc)}}
+                    </h3>
                 </div>
                 @endforeach
                 <div class="clearfix"></div>
                 <hr>
                 <div class="text-right">
-                  <a href="{{route('transaksi.index')}}" class="btn btn-outline btn-info" style="color:white">Kembali</a>
+                    <a href="{{route('transaksi.index')}}" class="btn btn-outline btn-danger" style="color:white">Kembali</a>
+                    <a href="{{url('cetak-invoice-laporan/'.$item->id. '/print')}}" target="_blank" class="btn btn-success"><i class="fa fa-print"></i> Print</a>
                 </div>
             </div>
         </div>
