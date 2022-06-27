@@ -15,14 +15,14 @@
                         <div class="col-lg-6 col-xl-6 col-12">
                             <div class="form-group has-success">
                                 <label class="control-label">Nama</label>
-                                <input type="text" class="form-control form-control-danger" name="nama" placeholder="Nama Customer" autocomplete="off">
+                                <input type="text" class="form-control form-control-danger" name="nama" value="{{ old('nama') }}" placeholder="Nama Customer" autocomplete="off">
                             </div>
                         </div>
                         <!--/span-->
                         <div class="col-lg-6 col-xl-6 col-12">
                             <div class="form-group has-success">
                                 <label class="control-label">Alamat</label>
-                                <input type="text" class="form-control form-control-danger" name="alamat" placeholder="Alamat" autocomplete="off">
+                                <input type="text" class="form-control form-control-danger" name="alamat" value="{{ old('alamat') }}" placeholder="Alamat" autocomplete="off">
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                         <div class="col-lg-6 col-xl-6 col-12">
                             <div class="form-group has-success">
                                 <label class="control-label">No. Telp</label>
-                                <input type="number" class="form-control form-control-danger" name="no_telp" placeholder="Nomor Telpon" autocomplete="off">
+                                <input type="number" class="form-control form-control-danger" name="no_telp" value="{{ old('no_telp') }}" placeholder="Nomor Telpon" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-lg-6 col-xl-6 col-12">
@@ -52,7 +52,7 @@
                             <button type="reset" class="btn btn-outline-warning mr-1 mb-1">Reset</button>
                         </div>
                     </div>
-                    <!--/row-->                  
+                    <!--/row-->
                 </div>
             </form>
         </div>
