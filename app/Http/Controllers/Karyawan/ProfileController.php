@@ -26,16 +26,9 @@ class ProfileController extends Controller
     // Profile Karyawan Cabang - Save
     public function karyawanProfileSave(Request $request, $id)
     {
+      $data = $request->all();
       $edit = User::FindorFail($id);
-      $edit->id = $request->id;
-      $edit->name = $request->name;
-      $edit->email = $request->email;
-      $edit->alamat = $request->alamat;
-      $edit->no_telp = $request->no_telp;
-      $edit->nama_cabang = $request->nama_cabang;
-      $edit->alamat_cabang = $request->alamat_cabang;
-      $edit->save();
-
+      $edit->update($data);
 
       alert()->success('Update Data Berhasil');
       $id = $edit->id;
