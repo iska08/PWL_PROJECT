@@ -40,9 +40,7 @@
                             </div>
                         </div>
                         <div class="login-footer">
-                            <div class="divider">
-                                <div class="divider-text"><a href="/">E-Laundry</a></div>
-                            </div>
+                            <div class="divider"></div>
                         </div>
                     </div>
                 </div>

@@ -16,53 +16,39 @@
 <div class="content-body">
   <section>
     <div class="row">
-      <!-- left menu section -->
       <div class="col-md-3 mb-2 mb-md-0">
         <ul class="nav nav-pills flex-column mt-md-0 mt-1">
           <li class="nav-item">
-              <a class="nav-link d-flex py-75 active" id="pill-general" data-toggle="pill" href="#vertical-general" aria-expanded="true">
-                  <i class="feather icon-globe mr-50 font-medium-3"></i>
-                  General
-              </a>
+            <a class="nav-link d-flex py-75 active" id="pill-general" data-toggle="pill" href="#vertical-general" aria-expanded="true">
+              <i class="feather icon-globe mr-50 font-medium-3"></i>
+              General
+            </a>
           </li>
-
           <li class="nav-item">
-              <a class="nav-link d-flex py-75" id="pill-target" data-toggle="pill" href="#vertical-target" aria-expanded="false">
-                  <i class="feather icon-message-circle mr-50 font-medium-3"></i>
-                  Target Laundry
-              </a>
+            <a class="nav-link d-flex py-75" id="pill-target" data-toggle="pill" href="#vertical-target" aria-expanded="false">
+              <i class="feather icon-message-circle mr-50 font-medium-3"></i>
+              Target Laundry
+            </a>
           </li>
-
           <li class="nav-item">
-              <a class="nav-link d-flex py-75" id="pill-theme" data-toggle="pill" href="#vertical-theme" aria-expanded="false">
-                  <i class="feather icon-feather mr-50 font-medium-3"></i>
-                  Theme
-              </a>
+            <a class="nav-link d-flex py-75" id="pill-theme" data-toggle="pill" href="#vertical-theme" aria-expanded="false">
+              <i class="feather icon-feather mr-50 font-medium-3"></i>
+              Theme
+            </a>
           </li>
-
           <li class="nav-item">
-              <a class="nav-link d-flex py-75" id="pill-bank" data-toggle="pill" href="#vertical-bank" aria-expanded="false">
-                  <i class="feather icon-credit-card mr-50 font-medium-3"></i>
-                  Data Bank
-              </a>
+            <a class="nav-link d-flex py-75" id="pill-bank" data-toggle="pill" href="#vertical-bank" aria-expanded="false">
+              <i class="feather icon-credit-card mr-50 font-medium-3"></i>
+              Data Bank
+            </a>
           </li>
-
-          <li class="nav-item">
-              <a class="nav-link d-flex py-75" id="pill-notif" data-toggle="pill" href="#vertical-notif" aria-expanded="false">
-                  <i class="feather icon-feather mr-50 font-medium-3"></i>
-                  Notifications
-              </a>
-          </li>
-
         </ul>
       </div>
-      <!-- right content section -->
       <div class="col-md-9">
         <div class="card">
           <div class="card-content">
             <div class="card-body">
               <div class="tab-content">
-                {{-- Panel General --}}
                 <div role="tabpanel" class="tab-pane active" id="vertical-general" aria-labelledby="pill-general" aria-expanded="true">
                   <form action="{{route('seting-page.update', $setpage->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -84,7 +70,6 @@
                           </div>
                         </div>
                       </div>
-
                       <div class="col-md-4">
                         <div class="form-group">
                           <div class="controls">
@@ -93,7 +78,6 @@
                           </div>
                         </div>
                       </div>
-
                       <div class="col-md-4">
                         <div class="form-group">
                           <div class="controls">
@@ -102,7 +86,6 @@
                           </div>
                         </div>
                       </div>
-
                       <div class="col-md-4">
                         <div class="form-group">
                           <div class="controls">
@@ -111,7 +94,6 @@
                           </div>
                         </div>
                       </div>
-
                       <div class="col-md-4">
                         <div class="form-group">
                           <div class="controls">
@@ -120,7 +102,6 @@
                           </div>
                         </div>
                       </div>
-
                       <div class="col-md-4">
                         <div class="form-group">
                           <div class="controls">
@@ -129,7 +110,6 @@
                           </div>
                         </div>
                       </div>
-
                       <div class="col-md-4">
                         <div class="form-group">
                           <div class="controls">
@@ -138,17 +118,15 @@
                           </div>
                         </div>
                       </div>
-
                       <div class="col-md-4">
                         <div class="form-group">
                           <div class="controls">
-                            <label for="Image Hero">Image Hero</label>
+                            <label for="Image Hero">File</label>
                             <input type="file" name="img_hero" class="form-control" placeholder="Username No Telp">
                             <small class="text-warning">Recomendes Image size 1200p x 400p</small>
                           </div>
                         </div>
                       </div>
-
                       <div class="col-12 d-flex flex-sm-row flex-column justify-content-start">
                         <button type="submit" class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">Save changes</button>
                         <button type="reset" class="btn btn-outline-warning">Cancel</button>
@@ -156,8 +134,6 @@
                     </div>
                   </form>
                 </div>
-
-                {{-- Panel Target --}}
                 <div class="tab-pane fade" id="vertical-target" role="tabpanel" aria-labelledby="pill-target" aria-expanded="false">
                   <form action="{{route('set-target.update', Auth::user()->id)}}" method="post">
                     @csrf
@@ -171,8 +147,7 @@
                           </div>
                         </div>
                       </div>
-
-                       <div class="col-md-4">
+                      <div class="col-md-4">
                         <div class="form-group">
                           <div class="controls">
                             <label for="Target Bulan">Target per-bulan</label>
@@ -180,8 +155,7 @@
                           </div>
                         </div>
                       </div>
-
-                       <div class="col-md-4">
+                      <div class="col-md-4">
                         <div class="form-group">
                           <div class="controls">
                             <label for="Target Tahun">Target per-tahun</label>
@@ -189,7 +163,6 @@
                           </div>
                         </div>
                       </div>
-
                       <div class="col-12 d-flex flex-sm-row flex-column justify-content-start">
                         <button type="submit" class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">Save changes</button>
                         <button type="reset" class="btn btn-outline-warning">Cancel</button>
@@ -197,8 +170,6 @@
                     </div>
                   </form>
                 </div>
-
-                {{-- Panel Theme --}}
                 <div class="tab-pane fade" id="vertical-theme" role="tabpanel" aria-labelledby="pill-theme" aria-expanded="false">
                   <form action="{{route('setting-theme.update', Auth::id())}}" method="post">
                     @csrf
@@ -206,23 +177,20 @@
                       <div class="row">
                         <h5 class="m-1">Theme Dark <i class=" {{Auth::user()->theme == 1 ? 'fa fa-check' : ''}} " style="color: chartreuse"></i> </h5>
                         <div class="col-12 mb-1">
-                            <div class="custom-control custom-switch custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" name="theme" {{Auth::user()->theme == 1 ? 'checked' : ''}} value="1" id="theme">
-                                <label class="custom-control-label mr-1" for="theme"></label>
-                                <span class="switch-label w-100">Aktifkan Jika Ingin Menggunakan Theme Dark</span>
-                            </div>
+                          <div class="custom-control custom-switch custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" name="theme" {{Auth::user()->theme == 1 ? 'checked' : ''}} value="1" id="theme">
+                            <label class="custom-control-label mr-1" for="theme"></label>
+                            <span class="switch-label w-100">Aktifkan Jika Ingin Menggunakan Theme Dark</span>
+                          </div>
                         </div>
-
                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-start">
                           <button type="submit" class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">Save
-                              changes</button>
+                            changes</button>
                           <button type="reset" class="btn btn-outline-warning">Cancel</button>
                         </div>
                       </div>
                   </form>
                 </div>
-
-                {{-- Panel Bank --}}
                 <div class="tab-pane fade" id="vertical-bank" role="tabpanel" aria-labelledby="pill-bank" aria-expanded="false">
                   <form action="" method="post">
                   @csrf
@@ -258,7 +226,6 @@
                             </a>
                           </div>
                         @endforeach
-
                         <div class="col-md-4">
                           <a data-toggle="modal" data-target="#addpayment">
                             <div class="card bg-primary">
@@ -274,12 +241,9 @@
                           </a>
                         </div>
                       @endif
-
                     </div>
                   </form>
                 </div>
-
-                {{-- Panel Notifications --}}
                 <div class="tab-pane fade" id="vertical-notif" role="tabpanel" aria-labelledby="pill-notif" aria-expanded="false">
                   <form action="{{route('set-notif.update', Auth::id())}}" method="post">
                     @csrf
@@ -288,13 +252,12 @@
                         <h5 class="m-1">Email</h5>
                         <div class="col-12 mb-1">
                           <div class="custom-control custom-switch custom-control-inline">
-                              <input type="checkbox" class="custom-control-input" name="email" {{$setnotif->email == 1 ? 'checked' : '0'}} value="1" id="email">
-                              <label class="custom-control-label mr-1" for="email"></label>
-                              <span class="switch-label w-100">Aktifkan Jika Ingin Menggunakan Email Notification</span>
+                            <input type="checkbox" class="custom-control-input" name="email" {{$setnotif->email == 1 ? 'checked' : '0'}} value="1" id="email">
+                            <label class="custom-control-label mr-1" for="email"></label>
+                            <span class="switch-label w-100">Aktifkan Jika Ingin Menggunakan Email Notification</span>
                           </div>
                         </div>
-
-                         <h5 class="m-1">Telegram Order Masuk</h5>
+                          <h5 class="m-1">Telegram Order Masuk</h5>
                         <div class="col-12 mb-1">
                           <div class="custom-control custom-switch custom-control-inline">
                               <input type="checkbox" class="custom-control-input" name="telegram_order_masuk" {{$setnotif->telegram_order_masuk == 1 ? 'checked' : '0'}} value="1" id="telegram_order_masuk">
@@ -302,22 +265,17 @@
                               <span class="switch-label w-100">Aktifkan Jika Ingin Mendapatkan Notifikasi Setiap Order Masuk</span>
                           </div>
                         </div>
-
-                         <h5 class="m-1">Telegram Order Keluar</h5>
+                          <h5 class="m-1">Telegram Order Keluar</h5>
                         <div class="col-12 mb-1">
                           <div class="custom-control custom-switch custom-control-inline">
-                              <input type="checkbox" class="custom-control-input" name="telegram_order_selesai" {{$setnotif->telegram_order_selesai == 1 ? 'checked' : '0'}} value="1" id="telegram_order_selesai">
-                              <label class="custom-control-label mr-1" for="telegram_order_selesai"></label>
-                              <span class="switch-label w-100">Aktifkan Jika Ingin Mendapatkan Notifikasi Setiap Order Selesai</span>
+                            <input type="checkbox" class="custom-control-input" name="telegram_order_selesai" {{$setnotif->telegram_order_selesai == 1 ? 'checked' : '0'}} value="1" id="telegram_order_selesai">
+                            <label class="custom-control-label mr-1" for="telegram_order_selesai"></label>
+                            <span class="switch-label w-100">Aktifkan Jika Ingin Mendapatkan Notifikasi Setiap Order Selesai</span>
                           </div>
                         </div>
-                        {{-- @if ($setnotif->email == 1)
-                          <small class="m-1 alert alert-danger">Pastikan Sudah mengatur setting mail driver pada file .env</small>
-                        @endif --}}
-
                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-start">
                           <button type="submit" class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">Save
-                              changes</button>
+                            changes</button>
                           <button type="reset" class="btn btn-outline-warning">Cancel</button>
                         </div>
                       </div>

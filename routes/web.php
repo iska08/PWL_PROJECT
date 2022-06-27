@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('transaksi','Admin\TransaksiController');
     Route::get('filter-transaksi','Admin\TransaksiController@filtertransaksi'); // filter data transaksi by karyawan
     Route::get('invoice-customer/{invoice}','Admin\TransaksiController@invoice'); // lihat invoice
+    Route::get('cetak-invoice-laporan/{id}/print','Admin\TransaksiController@cetakinvoice');
 
     // Route::get('data-transaksi','Admin\AdminController@datatransaksi');
     Route::get('data-harga','Admin\AdminController@dataharga');

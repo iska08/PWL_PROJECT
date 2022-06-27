@@ -10,7 +10,7 @@
                 <table id="myTable" class="table display table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>No</th>
                             <th>Nama Customer</th>
                             <th>Jenis Laundry</th>
                             <th>Jenis Pembayaran</th>

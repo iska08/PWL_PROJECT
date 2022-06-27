@@ -109,7 +109,7 @@
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-group has-success">
                                         <label class="control-label">Berat Per-Kg</label>
-                                        <input type="text" class="form-control form-control-danger" value="1000 gram" placeholder="Berat" readonly autocomplete="off" required>
+                                        <input type="text" class="form-control form-control-danger" value="1 kg" placeholder="Berat" readonly autocomplete="off" required>
                                     </div>
                                 </div>
                             </div>
