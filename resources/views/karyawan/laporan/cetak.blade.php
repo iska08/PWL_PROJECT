@@ -58,7 +58,7 @@
                         <p class="text-muted m-l-5"> Diterima Oleh <span style="margin-left:8px"> </span>: {{$data->name}}
                             <br/> Alamat <span style="margin-left:62px"> </span>: {{$data->alamat_cabang}}
                             <br/> No. Telp <span style="margin-left:50px"> </span>: {{$data->no_telpc}}
-                            </p>
+                        </p>
                     </td>
                     <td colspan="3">
                         <h3 style="text-align:right">Detail Order Customer :</h3>

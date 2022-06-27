@@ -9,7 +9,7 @@
             <h4 class="card-title">Form Edit Data Karyawan</h4>
         </div>
         <div class="card-body">
-            <form action="{{route('karyawan.update', $edit->id)}}" method="POST">
+            <form action="{{route('karyawan.update', $edit->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-body">
@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <div class="position-relative">
-                                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Nama" value="{{$edit->name}}" disabled>
+                                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Nama" value="{{$edit->name}}">
                                 @error('name')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <label for="email-id-icon">Email</label>
                             <div class="position-relative">
-                                <input type="email" name="email" id="email-id-icon" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="{{$edit->email}}" disabled>
+                                <input type="email" name="email" id="email-id-icon" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="{{$edit->email}}">
                                 @error('email')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label for="nama-cabang">Nama Cabang</label>
                             <div class="position-relative">
-                                <input type="text" name="nama_cabang" id="nama-cabang" class="form-control  @error('nama_cabang') is-invalid @enderror" placeholder="Nama Cabang" value="{{$edit->nama_cabang}}" disabled>
+                                <input type="text" name="nama_cabang" id="nama-cabang" class="form-control  @error('nama_cabang') is-invalid @enderror" placeholder="Nama Cabang" value="{{$edit->nama_cabang}}">
                                 @error('nama_cabang')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -57,7 +57,7 @@
                         <div class="form-group">
                             <label for="no-telp-cabang">No. Telp Cabang</label>
                             <div class="position-relative">
-                                <input type="number" name="no_telp" id="no-telp-cabang" class="form-control @error('no_telp') is-invalid @enderror" value="{{$edit->no_telp}}" disabled>
+                                <input type="number" name="no_telp" id="no-telp-cabang" class="form-control @error('no_telp') is-invalid @enderror" value="{{$edit->no_telp}}">
                                 @error('no_telp')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -87,7 +87,7 @@
                         <div class="form-group">
                             <label for="alamat-karyawan">Alamat Karyawan</label>
                             <div class="position-relative">
-                                <textarea type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="alamat-karyawan" rows="3" disabled> {{$edit->alamat}} </textarea>
+                                <textarea type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="alamat-karyawan" rows="3"> {{$edit->alamat}} </textarea>
                                 @error('alamat')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -100,7 +100,7 @@
                         <div class="form-group">
                             <label for="alamat-laundry">Alamat Laundry</label>
                             <div class="position-relative">
-                                <textarea type="text" name="alamat_cabang" class="form-control @error('alamat_cabang') is-invalid @enderror" id="alamat-laundry" rows="3" disabled> {{$edit->alamat_cabang}} </textarea>
+                                <textarea type="text" name="alamat_cabang" class="form-control @error('alamat_cabang') is-invalid @enderror" id="alamat-laundry" rows="3"> {{$edit->alamat_cabang}} </textarea>
                                 @error('alamat_cabang')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -109,9 +109,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-6 col-xl-6 col-12">
+                        <div class="form-group">
+                            <label for="image" class="form-label">Post Image</label>
+                            <input class="form-control" type="file" id="image" name="image">
+                            <br>
+                            <img width="300px" src="{{ asset('storage/' . $edit->image) }}">
+                        </div>
+                    </div>
                   </div>
                 </div>
-
                 <div class="form-actions">
                     <button type="submit" class="btn btn-success"> Update</button>
                     <a href="{{route('karyawan.index')}}" class="btn btn-danger">Cancel</a>

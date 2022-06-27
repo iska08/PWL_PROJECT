@@ -50,6 +50,9 @@ class KaryawanController extends Controller
       $adduser->status        = 'Active';
       $adduser->auth          = 'Karyawan';
       $adduser->password      = bcrypt('123456');
+      if($request->file('image')) {
+        $adduser['image'] = $request->file('image')->store('post-images');
+      }
       $adduser->save();
 
       $adduser->assignRole($adduser->auth);
@@ -91,7 +94,16 @@ class KaryawanController extends Controller
     public function update(Request $request, $id)
     {
       $adduser = User::find($id);
-      $adduser->status = $request->status;
+      $adduser->name          = $request->name;
+      $adduser->email         = $request->email;
+      $adduser->nama_cabang   = $request->nama_cabang;
+      $adduser->alamat        = $request->alamat;
+      $adduser->alamat_cabang = $request->alamat_cabang;
+      $adduser->no_telp       = $request->no_telp;
+      $adduser->status        = $request->status;
+      if($request->file('image')) {
+        $adduser['image'] = $request->file('image')->store('post-images');
+      }
       $adduser->save();
 
       Session::flash('success','Update Karyawan Berhasil');

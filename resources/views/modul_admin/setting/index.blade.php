@@ -118,15 +118,6 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <div class="controls">
-                            <label for="Image Hero">File</label>
-                            <input type="file" name="img_hero" class="form-control" placeholder="Username No Telp">
-                            <small class="text-warning">Recomendes Image size 1200p x 400p</small>
-                          </div>
-                        </div>
-                      </div>
                       <div class="col-12 d-flex flex-sm-row flex-column justify-content-start">
                         <button type="submit" class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">Save changes</button>
                         <button type="reset" class="btn btn-outline-warning">Cancel</button>

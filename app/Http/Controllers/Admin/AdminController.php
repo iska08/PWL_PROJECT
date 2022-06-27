@@ -60,11 +60,11 @@ class AdminController extends Controller
     {
       $editharga = harga::find($request->id_harga);
       $editharga->update([
-          'jenis' => $request->jenis,
-          'kg'    => $request->kg,
-          'harga' => $request->harga,
-          'hari' => $request->hari,
-          'status' => $request->status,
+          'jenis'   => $request->jenis,
+          'kg'      => $request->kg,
+          'harga'   => $request->harga,
+          'hari'    => $request->hari,
+          'status'  => $request->status,
       ]);
       Session::flash('success','Edit Data Harga Berhasil');
       return $editharga;

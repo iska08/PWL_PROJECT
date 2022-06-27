@@ -12,7 +12,7 @@
                 @error('errors')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <form action="{{route('karyawan.store')}}" method="POST" class="form form-vertical">
+                <form action="{{route('karyawan.store')}}" method="POST" class="form form-vertical" enctype="multipart/form-data">
                     @csrf
                     <div class="form-body">
                         <div class="row">
@@ -93,6 +93,10 @@
                                         @enderror
                                     </div>
                                 </div>
+                            </div>
+                            <div class="mb-3 col-lg-4 col-xl-4 col-12">
+                                <label for="image" class="form-label">Post Image</label>
+                                <input class="form-control" type="file" id="image" name="image">
                             </div>
                             <div class="col-12">
                               <button type="submit" class="btn btn-primary mr-1 mb-1">Tambah</button>

@@ -25,6 +25,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th>Logo Cabang</th>
                 <th>Nama Karyawan</th>
                 <th>Email</th>
                 <th>Alamat Cabang</th>
@@ -39,6 +40,9 @@
               @foreach ($kry as $item)
               <tr>
                 <td>{{$no}}</td>
+                <td>
+                  <img width="50px" src="{{ asset('storage/' . $item->image) }}">
+                </td>
                 <td>{{$item->name}}</td>
                 <td>{{$item->email}}</td>
                 <td>{{$item->alamat_cabang}}</td>

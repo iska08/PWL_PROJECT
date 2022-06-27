@@ -125,7 +125,7 @@
                 </div>
                 <div class="col-md-2">
                   <div class="form-group has-success">
-                      <label class="control-label">Disc</label>
+                      <label class="control-label">Diskon</label>
                       <input type="number" name="disc" placeholder="Tulis Disc" class="form-control @error('disc') is-invalid @enderror">
                       @error('disc')
                         <span class="invalid-feedback" role="alert">

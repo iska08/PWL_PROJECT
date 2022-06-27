@@ -18,7 +18,7 @@ class InvoiceController extends Controller
         ->where('transaksis.user_id',Auth::user()->id)
         ->orderBy('id','DESC')->get();
 
-      $data = transaksi::selectRaw('transaksis.*,a.nama,a.alamat,a.no_telp,a.kelamin,b.name,b.nama_cabang,b.alamat_cabang,b.no_telp as no_telpc')
+      $data = transaksi::selectRaw('transaksis.*,a.nama,a.alamat,a.no_telp,a.kelamin,b.name,b.nama_cabang,b.alamat_cabang,b.image,b.no_telp as no_telpc')
         ->leftJoin('customers as a' , 'a.id' , '=' ,'transaksis.id')
         ->leftJoin('users as b' , 'b.id' , '=' ,'transaksis.user_id')
         ->where('transaksis.id', $request->id)
