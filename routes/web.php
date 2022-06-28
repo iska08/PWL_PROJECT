@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::get('cetak-invoice-laporan/{id}/print','Admin\TransaksiController@cetakinvoice');
 
     // Route::get('data-transaksi','Admin\AdminController@datatransaksi');
+    Route::resource('harga','Admin\AdminController');
     Route::get('data-harga','Admin\AdminController@dataharga');
     Route::post('harga-store','Admin\AdminController@hargastore');
     Route::get('edit-harga','Admin\AdminController@hargaedit');

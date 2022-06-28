@@ -17,9 +17,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title"> Data Harga Laundry Per-Cabang
-                        <a class="btn btn-primary" style="color:white">Tambah</a>
-                    </h4>
+                    <h4 class="card-title"> Data Harga Laundry Per-Cabang</h4>
                     <div class="table-responsive m-t-0">
                         <table id="myTable" class="table display table-bordered table-striped">
                             <thead>
@@ -52,7 +50,13 @@
                                     </td>
                                     <td>{{$item->nama_cabang}}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-success" data-toggle="modal" data-id="{{$item->id}}" data-id-jenis="{{$item->jenis}}" data-id-kg="{{$item->kg}}" data-id-harga="{{$item->harga}}" data-id-hari="{{$item->hari}}" data-id-status="{{$item->status}}" id="click_harga" data-target="#edit_harga" style="color:white">Edit</a>
+                                        <form action="{{ route('harga.destroy',$item->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <a href="{{route('harga.show', $item->id)}}" class="btn btn-info btn-sm">Info</a><br>
+                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-id="{{$item->id}}" data-id-jenis="{{$item->jenis}}" data-id-kg="{{$item->kg}}" data-id-harga="{{$item->harga}}" data-id-hari="{{$item->hari}}" data-id-status="{{$item->status}}" id="click_harga" data-target="#edit_harga" style="color:white">Edit</a>
+                                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 <?php $no++; ?>
@@ -64,7 +68,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-4">
             <div class="card card-outline-info">
                 <div class="card-header">
@@ -76,7 +79,6 @@
                         <div class="form-body">
                             @if ($karyawan == !null)
                             <div class="row p-t-20">
-
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-group has-success">
                                         <label class="control-label">Cabang</label>
@@ -139,8 +141,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--/row-->
-
                         </div>
                         <div class="form-actions">
                             <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>

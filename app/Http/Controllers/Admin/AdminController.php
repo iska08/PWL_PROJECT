@@ -33,6 +33,23 @@ class AdminController extends Controller
       return view('modul_admin.laundri.harga', compact('harga','karyawan','getcabang'));
     }
 
+    // Lihat detail harga
+    public function show($id)
+    {
+      $harga = harga::find($id);
+      return view('modul_admin.laundri.infoHarga', compact('harga'));
+    }
+
+    // Hapus data harga
+    public function destroy($id)
+    {
+      $hapus = harga::find($id);
+      $hapus->delete();
+
+      Session::flash('success','Hapus Data Harga Berhasil');
+      return redirect('data-harga');
+    }
+
     // Proses Simpan Harga
     public function hargastore(Request $request)
     {
@@ -68,7 +85,6 @@ class AdminController extends Controller
       ]);
       Session::flash('success','Edit Data Harga Berhasil');
       return $editharga;
-
     }
 
 // Laporan
