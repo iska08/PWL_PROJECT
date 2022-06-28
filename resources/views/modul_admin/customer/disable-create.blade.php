@@ -50,17 +50,6 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group has-success">
-                                <label class="control-label">Alamat</label>
-                                <textarea name="alamat" class="form-control @error('alamat') is-invalid @enderror" rows="3" placeholder="Alamat Customer"></textarea>
-                                @error('alamat')
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                                  </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group has-success">
                                 <label class="control-label">Gender</label>
                                 <select class="form-control custom-select @error('kelamin') is-invalid @enderror" name="kelamin">
                                     <option value="">-- Jenis Gender --</option>
@@ -68,6 +57,33 @@
                                     <option value="P">Perempuan</option>
                                 </select>
                                 @error('kelamin')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                                @enderror
+                            </div>
+                        </div>
+                        {{--<div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label class="control-label">Cabang</label>
+                                <select class="form-control custom-select @error('user_id') is-invalid @enderror" name="user_id">
+                                    <option value="">-- Pilih Cabang --</option>
+                                    @foreach ($getcabang as $item)
+                                        <option value="{{$item->id}}">{{$item->nama_cabang}} - {{$item->name}}</option>
+                                    @endforeach
+                                </select>
+                                @error('user_id')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                                @enderror
+                            </div>
+                        </div>--}}
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label class="control-label">Alamat</label>
+                                <textarea name="alamat" class="form-control @error('alamat') is-invalid @enderror" rows="3" placeholder="Alamat Customer"></textarea>
+                                @error('alamat')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
                                   </span>

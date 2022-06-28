@@ -9,7 +9,7 @@ class customer extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'nama','alamat','kelamin','no_telp','email_customer'
+        'nama','alamat','kelamin','no_telp','email_customer','user_id'
     ];
 
     public function transaksi()

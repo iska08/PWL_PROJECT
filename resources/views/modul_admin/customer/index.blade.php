@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title"> Data Customer
-                    {{-- <a href="{{route('customer.create')}}" class="btn btn-primary">Tambah</a> --}}
+                    <a href="{{route('customer.create')}}" class="btn btn-primary">Tambah</a>
                 </h4>
                 <div class="table-responsive m-t-0">
                     <table id="myTable" class="table display table-bordered table-striped">
