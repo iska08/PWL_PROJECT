@@ -6,24 +6,28 @@
     <div class="col-sm-12 col-md-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Detail Data Karyawan</h4>
+                <h4 class="card-title">Detail Data Admin Cabang</h4>
             </div>
             <center>
-                <img width="250px" src="{{ asset('storage/' . $kry->image) }}">
+                <br><img width="250px" src="{{ asset('storage/' . $kry->image) }}"><br>
             </center>
             <div class="card-content">
                 <div class="card-body">
                     <div class="card-text">
                         <dl class="row">
-                            <dt class="col-sm-2">Nama Karyawan</dt>
+                            <dt class="col-sm-2">Nama Admin Cabang</dt>
                             <dd class="col-sm-10">: {{$kry->name}}</dd>
                         </dl>
                         <dl class="row">
-                            <dt class="col-sm-2">Email Karyawan</dt>
+                            <dt class="col-sm-2">Email Admin Cabang</dt>
                             <dd class="col-sm-10">: {{$kry->email}}</dd>
                         </dl>
                         <dl class="row">
-                            <dt class="col-sm-2">Status Karyawan</dt>
+                            <dt class="col-sm-2">No. Telepon</dt>
+                            <dd class="col-sm-10">: {{$kry->no_telp == 0 ? 'Belum Input' : $kry->no_telp}}</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-2">Status Admin Cabang</dt>
                             <dd class="col-sm-10">: 
                                 @if ($kry->status == 'Active')
                                 <span class="label label-success">Aktif</span>
@@ -33,20 +37,16 @@
                             </dd>
                         </dl>
                         <dl class="row">
-                            <dt class="col-sm-2">Alamat Cabang</dt>
-                            <dd class="col-sm-10">: {{$kry->alamat_cabang}}</dd>
+                            <dt class="col-sm-2">Alamat Admin Cabang</dt>
+                            <dd class="col-sm-10">: {{$kry->alamat}}</dd>
                         </dl>
                         <dl class="row">
                             <dt class="col-sm-2">Nama Cabang</dt>
                             <dd class="col-sm-10">: {{$kry->nama_cabang}}</dd>
                         </dl>
                         <dl class="row">
-                            <dt class="col-sm-2">No. Telepon</dt>
-                            <dd class="col-sm-10">: {{$kry->no_telp == 0 ? 'Belum Input' : $kry->no_telp}}</dd>
-                        </dl>
-                        <dl class="row">
-                            <dt class="col-sm-2">Alamat Karyawan</dt>
-                            <dd class="col-sm-10">: {{$kry->alamat}}</dd>
+                            <dt class="col-sm-2">Alamat Cabang</dt>
+                            <dd class="col-sm-10">: {{$kry->alamat_cabang}}</dd>
                         </dl>
                     </div>
                 </div>

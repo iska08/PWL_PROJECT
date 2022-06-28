@@ -6,7 +6,7 @@
   <div class="col-lg-12">
     <div class="card card-outline-info">
         <div class="card-header">
-            <h4 class="card-title">Form Edit Data Karyawan</h4>
+            <h4 class="card-title">Form Edit Data Admin Cabang</h4>
         </div>
         <div class="card-body">
             <form action="{{route('karyawan.update', $edit->id)}}" method="POST" enctype="multipart/form-data">
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-lg-4 col-xl-4 col-12">
                         <div class="form-group">
-                            <label for="status-karyawan">Status Karyawan</label>
+                            <label for="status-karyawan">Status Admin Cabang</label>
                             <div class="position-relative">
                                 <select name="status" class="form-control">
                                   <option value="">Pilih Status</option>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="col-lg-6 col-xl-6 col-12">
                         <div class="form-group">
-                            <label for="alamat-karyawan">Alamat Karyawan</label>
+                            <label for="alamat-karyawan">Alamat Admin Cabang</label>
                             <div class="position-relative">
                                 <textarea type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="alamat-karyawan" rows="3"> {{$edit->alamat}} </textarea>
                                 @error('alamat')
@@ -120,7 +120,7 @@
                   </div>
                 </div>
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-success"> Update</button>
+                    <button type="submit" class="btn btn-success">Update</button>
                     <a href="{{route('karyawan.index')}}" class="btn btn-danger">Cancel</a>
                 </div>
             </form>

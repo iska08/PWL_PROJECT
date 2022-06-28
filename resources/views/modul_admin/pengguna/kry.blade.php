@@ -17,7 +17,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title"> Data Karyawan/Cabang
+        <h4 class="card-title"> Data Admin Cabang
           <a href="{{route('karyawan.create')}}" class="btn btn-primary">Tambah</a>
         </h4>
         <div class="table-responsive">
@@ -26,7 +26,7 @@
               <tr>
                 <th>No</th>
                 <th>Logo Cabang</th>
-                <th>Nama Karyawan</th>
+                <th>Nama Admin Cabang</th>
                 <th>Email</th>
                 <th>Alamat Cabang</th>
                 <th>Nama Cabang</th>
