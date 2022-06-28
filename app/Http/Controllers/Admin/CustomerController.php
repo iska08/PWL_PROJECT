@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\customer;
+use Session;
+
 class CustomerController extends Controller
 {
     /**
@@ -14,8 +16,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-      $customer = customer::all();
-      return view('modul_admin.customer.index', compact('customer'));
+        $customer = customer::all();
+        return view('modul_admin.customer.index', compact('customer'));
     }
 
     /**
@@ -47,8 +49,8 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-      $customer = customer::with('transaksi')->where('id',$id)->first();
-      return view('modul_admin.customer.infoCustomer', compact('customer'));
+        $customer = customer::with('transaksi')->where('id',$id)->first();
+        return view('modul_admin.customer.infoCustomer', compact('customer'));
     }
 
     /**
@@ -59,7 +61,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit = customer::where('id',$id)->first();
+        return view('modul_admin.customer.editCustomer', compact('edit'));
     }
 
     /**
@@ -71,7 +74,16 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $addplg = customer::where('id',$id)->first();
+        $addplg->nama = $request->nama;
+        $addplg->email_customer = $request->email_customer;
+        $addplg->alamat = $request->alamat;
+        $addplg->kelamin = $request->kelamin;
+        $addplg->no_telp = $request->no_telp;
+        $addplg->save();
+
+        Session::flash('success','Update Customer Berhasil');
+        return redirect('customer');
     }
 
     /**
@@ -82,6 +94,10 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = customer::find($id);
+        $delete->delete();
+
+        Session::flash('success','Hapus Customer Berhasil');
+        return redirect('customer');
     }
 }

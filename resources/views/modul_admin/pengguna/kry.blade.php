@@ -30,7 +30,7 @@
                 <th>Email</th>
                 <th>Alamat Cabang</th>
                 <th>Nama Cabang</th>
-                <th>No Telp</th>
+                <th>No Telepon</th>
                 <th>Status</th>
                 <th>Action</th>
               </tr>
@@ -59,7 +59,8 @@
                   <form action="{{ route('karyawan.destroy',$item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <a href="{{route('karyawan.edit', $item->id)}}" class="btn btn-sm btn-info">Edit</a>
+                    <a href="{{route('karyawan.show', $item->id)}}" class="btn btn-info btn-sm">Info</a><br>
+                    <a href="{{route('karyawan.edit', $item->id)}}" class="btn btn-primary btn-sm">Edit</a><br>
                     <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                   </form>
                 </td>

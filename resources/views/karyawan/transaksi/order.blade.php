@@ -34,7 +34,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                  {{-- {{dd($order)}} --}}
                     <?php $no=1; ?>
                     @foreach ($order as $item)
                     <tr>
@@ -42,26 +41,20 @@
                         <td style="font-weight:bold; font-color:black">{{$item->invoice}}</td>
                         <td>{{carbon\carbon::parse($item->tgl_transaksi)->format('d-m-y')}}</td>
                         <td>{{$item->customer}}</td>
-                        @if($item->status_order == '')
                         <td>
                             @if ($item->status_order == 'Done')
-                                <span class="badge badge-success">Selesai</span>
+                                <span class="label label-success">Selesai</span>
                             @elseif($item->status_order == 'Delivery')
-                                <span class="badge badge-primary">Sudah Diambil</span>
+                                <span class="label label-primary">Sudah Diambil</span>
                             @elseif($item->status_order == 'Process')
-                                <span class="badge badge-dark">Sedang Proses</span>
+                                <span class="label label-info">Sedang Proses</span>
                             @endif
                         </td>
-                        @elseif($item->status_payment == 'Success')
-                        <td>
-                            <span class="badge badge-success">Selesai</span>
-                        </td>
-                        @endif
                         <td>
                             @if ($item->status_payment == 'Success')
-                                <span class="badge badge-success">Sudah Dibayar</span>
+                                <span class="label label-success">Sudah Dibayar</span>
                             @elseif($item->status_payment == 'Pending')
-                                <span class="badge badge-danger">Belum Dibayar</span>
+                                <span class="label label-info">Belum Dibayar</span>
                             @endif
                         </td>
                         <td>{{$item->price->jenis}}</td>
@@ -86,7 +79,7 @@
                         </td>
                     </tr>
                     <?php $no++; ?>
-                    @endforeach
+                  @endforeach
                 </tbody>
             </table>
         </div>

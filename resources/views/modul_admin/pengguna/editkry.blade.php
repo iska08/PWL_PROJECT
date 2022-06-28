@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-lg-4 col-xl-4 col-12">
                         <div class="form-group">
-                            <label for="no-telp-cabang">Status Karyawan</label>
+                            <label for="status-karyawan">Status Karyawan</label>
                             <div class="position-relative">
                                 <select name="status" class="form-control">
                                   <option value="">Pilih Status</option>

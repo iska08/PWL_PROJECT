@@ -28,10 +28,9 @@
                             <dd class="col-sm-10">: {{$customer->alamat}}</dd>
                         </dl>
                         <dl class="row">
-                            <dt class="col-sm-2">Kelamin Customer</dt>
+                            <dt class="col-sm-2">Jenis Kelamin</dt>
                             <dd class="col-sm-10">: {{$customer->kelamin == 'L' ? 'Laki-laki' : 'Perempuan'}}</dd>
                         </dl>
-
                         <dl class="row">
                             <dt class="col-sm-2">Laundry Pertama</dt>
                             <dd class="col-sm-10">: {{$customer->created_at->format('d M Y')}}</dd>

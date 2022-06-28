@@ -66,6 +66,14 @@
                             {{$data->nama}}
                             <br/> {{$data->alamat}}
                             <br/> {{$data->no_telp}}
+                        </p><br>
+                        <p style="text-align:right"><b>Tanggal Masuk :</b> <i class="fa fa-calendar"></i> {{carbon\carbon::parse($data->tgl_transaksi)->format('d-m-y')}}</p>
+                        <p style="text-align:right"><b>Tanggal Diambil :</b> <i class="fa fa-calendar"></i> 
+                            @if ($data->tgl_ambil == "")
+                                Belum Diambil
+                            @else
+                            {{carbon\carbon::parse($data->tgl_ambil)->format('d-m-y')}}
+                            @endif
                         </p>
                     </td>
                 </tr>
@@ -89,7 +97,7 @@
                 </tr>
                 @endforeach
                 <tr>
-                    <th colspan="4">Disc @if ($item->disc == "")
+                    <th colspan="4">Diskon @if ($item->disc == "")
                         0 %
                     @else
                         {{$item->disc}} %

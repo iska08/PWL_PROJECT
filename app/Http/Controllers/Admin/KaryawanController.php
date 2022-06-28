@@ -69,7 +69,8 @@ class KaryawanController extends Controller
      */
     public function show($id)
     {
-        //
+      $kry = User::find($id);
+      return view('modul_admin.pengguna.infoKaryawan', compact('kry'));
     }
 
     /**

@@ -10,8 +10,9 @@
             <div class="col-md-12">
                 <div class="pull-left">
                     <address>
-                        <img width="150px" src="{{ asset('storage/' . $data->image) }}">
-                        <h3> &nbsp;<b class="text-danger">{{$data->nama_cabang}}</b></h3>
+                        <h3>
+                            <b class="text-danger">{{$data->nama_cabang}}</b>
+                        </h3>
                         <p class="text-muted m-l-5"> Diterima Oleh <span style="margin-left:20px"> </span>: {{$data->name}}
                             <br/> Alamat <span style="margin-left:70px"> </span>: {{$data->alamat_cabang}}
                             <br/> No. Telp <span style="margin-left:68px"> </span>: {{$data->no_telpc}}

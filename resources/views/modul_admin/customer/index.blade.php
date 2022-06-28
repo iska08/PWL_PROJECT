@@ -18,7 +18,7 @@
                                 <th>Nama</th>
                                 <th>Alamat</th>
                                 <th>No Telpon</th>
-                                <th>Kelamin</th>
+                                <th>Jenis Kelamin</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -38,7 +38,13 @@
                                     @endif
                                 </td>
                                 <td>
-                                  <a href="{{route('customer.show', $item->id)}}" class="btn btn-info btn-sm">Info</a>
+                                    <form action="{{ route('customer.destroy',$item->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <a href="{{route('customer.show', $item->id)}}" class="btn btn-info btn-sm">Info</a><br>
+                                        <a href="{{route('customer.edit', $item->id)}}" class="btn btn-primary btn-sm">Edit</a><br>
+                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
                             <?php $no++; ?>
