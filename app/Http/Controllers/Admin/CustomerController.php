@@ -27,7 +27,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('modul_admin.customer.disable-create');
     }
 
     /**
@@ -38,7 +38,16 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addplg = New customer();
+        $addplg->nama = $request->nama;
+        $addplg->email_customer = $request->email_customer;
+        $addplg->alamat = $request->alamat;
+        $addplg->kelamin = $request->kelamin;
+        $addplg->no_telp = $request->no_telp;
+        $addplg->save();
+
+        Session::flash('success','Customer Berhasil Ditambah!');
+        return redirect('customer');
     }
 
     /**

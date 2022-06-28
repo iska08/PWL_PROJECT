@@ -7,9 +7,8 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title"> Data Customer
-                    {{-- <a href="{{url('customer-add')}}" class="btn btn-primary">Tambah</a> --}}
+                    {{-- <a href="{{route('customer.create')}}" class="btn btn-primary">Tambah</a> --}}
                 </h4>
-
                 <div class="table-responsive m-t-0">
                     <table id="myTable" class="table display table-bordered table-striped">
                         <thead>
@@ -58,7 +57,6 @@
 </div>
 @endsection
 @section('scripts')
-
 <script type="text/javascript">
     $(document).ready(function() {
         $('#myTable').DataTable();
@@ -88,7 +86,6 @@
                     });
                 }
             });
-            // Order by the grouping
             $('#example tbody').on('click', 'tr.group', function() {
                 var currentOrder = table.order()[0];
                 if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {

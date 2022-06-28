@@ -14,7 +14,7 @@
 @endif
 <div class="col-lg-12">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title"> Data Harga Laundry Per-Cabang</h4>
@@ -54,7 +54,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <a href="{{route('harga.show', $item->id)}}" class="btn btn-info btn-sm">Info</a><br>
-                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-id="{{$item->id}}" data-id-jenis="{{$item->jenis}}" data-id-kg="{{$item->kg}}" data-id-harga="{{$item->harga}}" data-id-hari="{{$item->hari}}" data-id-status="{{$item->status}}" id="click_harga" data-target="#edit_harga" style="color:white">Edit</a>
+                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-id="{{$item->id}}" data-id-jenis="{{$item->jenis}}" data-id-kg="{{$item->kg}}" data-id-harga="{{$item->harga}}" data-id-hari="{{$item->hari}}" data-id-status="{{$item->status}}" id="click_harga" data-target="#edit_harga" style="color:white">Edit</a><br>
                                             <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                         </form>
                                     </td>
@@ -68,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="card card-outline-info">
                 <div class="card-header">
                     <h4 class="m-b-0 text-black">Form Tambah Data Harga</h4>
@@ -143,8 +143,8 @@
                             </div>
                         </div>
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
-                            <button type="reset" class="btn btn-danger">Cancel</button>
+                            <button type="submit" class="btn btn-success btn-sm"> <i class="fa fa-check"></i> Save</button>
+                            <button type="reset" class="btn btn-danger btn-sm">Cancel</button>
                         </div>
                         @else
                             <h5 class="text-danger">Upsss, data karyawan/cabang masih kosong nih !!!</h5> <br>

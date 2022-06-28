@@ -32,7 +32,7 @@
                             <dd class="col-sm-10">: {{$customer->kelamin == 'L' ? 'Laki-laki' : 'Perempuan'}}</dd>
                         </dl>
                         <dl class="row">
-                            <dt class="col-sm-2">Laundry Pertama</dt>
+                            <dt class="col-sm-2">Tanggal Data Disimpan</dt>
                             <dd class="col-sm-10">: {{$customer->created_at->format('d M Y')}}</dd>
                         </dl>
                     </div>
