@@ -41,7 +41,7 @@
               <tr>
                 <td>{{$no}}</td>
                 <td>
-                  <img width="50px" src="{{ asset('storage/' . $item->image) }}">
+                  <img style="width: 100px; border: 2px solid white; padding: 2px" src="{{ asset('storage/' . $item->image) }}">
                 </td>
                 <td>{{$item->name}}</td>
                 <td>{{$item->email}}</td>

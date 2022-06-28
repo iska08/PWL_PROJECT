@@ -9,7 +9,7 @@
                 <h4 class="card-title">Detail Data Admin Cabang</h4>
             </div>
             <center>
-                <br><img width="250px" src="{{ asset('storage/' . $kry->image) }}"><br>
+                <br><img style="width: 300px; border: 4px solid white; padding: 4px" src="{{ asset('storage/' . $kry->image) }}"><br>
             </center>
             <div class="card-content">
                 <div class="card-body">

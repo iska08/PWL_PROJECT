@@ -114,7 +114,7 @@
                             <label for="image" class="form-label">Post Image</label>
                             <input class="form-control" type="file" id="image" name="image">
                             <br>
-                            <img width="300px" src="{{ asset('storage/' . $edit->image) }}">
+                            <img style="width: 300px; border: 4px solid white; padding: 4px" src="{{ asset('storage/' . $edit->image) }}">
                         </div>
                     </div>
                   </div>
