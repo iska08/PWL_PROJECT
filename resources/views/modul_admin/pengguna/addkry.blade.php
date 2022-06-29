@@ -5,7 +5,7 @@
 <div class="col-md-12 col-12">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Form Tambah Data Karyawan</h4>
+            <h4 class="card-title">Form Tambah Data Admin</h4>
         </div>
         <div class="card-content">
             <div class="card-body">
@@ -18,7 +18,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-xl-4 col-12">
                                 <div class="form-group">
-                                    <label for="nama">Nama</label>
+                                    <label for="nama">Nama Admin Cabang</label>
                                     <div class="position-relative">
                                         <input type="text" name="name" id="nama" class="form-control @error('name') is-invalid @enderror" placeholder="Nama" value="{{old('name')}}">
                                         @error('name')
@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-lg-4 col-xl-4 col-12">
                                 <div class="form-group">
-                                    <label for="alamat-karyawan">Alamat Karyawan</label>
+                                    <label for="alamat-karyawan">Alamat Admin Cabang</label>
                                     <div class="position-relative">
                                        <textarea type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="alamat-karyawan" rows="3" value="{{old('alamat')}}"></textarea>
                                        @error('alamat')
@@ -70,7 +70,7 @@
                             </div>
                             <div class="col-lg-4 col-xl-4 col-12">
                                 <div class="form-group">
-                                    <label for="alamat-laundry">Alamat Laundry</label>
+                                    <label for="alamat-laundry">Alamat Cabang Laundry</label>
                                     <div class="position-relative">
                                         <textarea type="text" name="alamat_cabang" class="form-control @error('alamat_cabang') is-invalid @enderror" id="alamat-laundry" rows="3" value="{{old('alamat_cabang')}}"></textarea>
                                         @error('alamat_cabang')
